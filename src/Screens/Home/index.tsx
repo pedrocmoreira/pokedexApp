@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Keyboard, LogBox, TouchableWithoutFeedback } from 'react-native';
 import PokeballSvg from '../../assets/patterns/pokeball.svg';
 import { Input } from '../../components/Input';
+import { PokemonCard } from '../../components/PokemonCard';
 
 import {
   Container,
@@ -10,6 +11,7 @@ import {
   ApplocationSubTitle,
   PokeballWrapper,
   InputContainer,  
+  PokemonCardWrapper,
 } from './styles';
 
 LogBox.ignoreLogs(['expo-app-loading is deprecated in favor of expo-splash-screen:']);
@@ -38,6 +40,10 @@ export function Home() {
           value={search}
         />  
       </InputContainer>
+
+    <PokemonCardWrapper>
+      <PokemonCard/>
+    </PokemonCardWrapper>
     </Container>
     </TouchableWithoutFeedback>
   )

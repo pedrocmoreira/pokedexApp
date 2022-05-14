@@ -23,12 +23,15 @@ export const ApplicationTitle = styled.Text`
 
 export const ApplocationSubTitle = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
-  color: ${({ theme }) => theme.colors.textColors.textGray};
+  color: ${({ theme }) => theme.colors.textColors.textGrey};
   font-size: ${RFValue(16)}px;
 `;
-
 
 export const InputContainer = styled.View`
   padding: 0px 40px;
   top: ${RFValue(-65)}px;
 `;
+
+export const PokemonCardWrapper = styled.View`
+  padding: 0px 40px;
+`
