@@ -1,21 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { LogBox } from 'react-native';
+import theme from './src/global/Styles/theme';
+import { useFonts } from '@expo-google-fonts/inter';
+import { Home } from './src/Screens/Home';
+import { ThemeProvider } from 'styled-components';
+import AppLoading from 'expo-app-loading';
+
+
+
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    'sf-Pro-bold': require('./src/assets/fonts/sf-pro-display-bold.ttf'),
+    'sf-Pro-medium': require('./src/assets/fonts/sf-pro-display-medium.ttf'),
+    'sf-Pro-regular': require('./src/assets/fonts/sf-pro-display-regular.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />
+  }
+  
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
