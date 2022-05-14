@@ -1,5 +1,5 @@
-import React from 'react';
-import { LogBox } from 'react-native';
+import React, { useState } from 'react';
+import { Keyboard, LogBox, TouchableWithoutFeedback } from 'react-native';
 import PokeballSvg from '../../assets/patterns/pokeball.svg';
 import { Input } from '../../components/Input';
 
@@ -9,14 +9,18 @@ import {
   ApplicationTitle,
   ApplocationSubTitle,
   PokeballWrapper,
-InputContainer,  
+  InputContainer,  
 } from './styles';
 
 LogBox.ignoreLogs(['expo-app-loading is deprecated in favor of expo-splash-screen:']);
 
 export function Home() {
 
+  const [ search, setSearch ] = useState('');
+
+
   return (
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <Container>
       <PokeballWrapper>
         <PokeballSvg style={{ opacity: .1, top: 10 }} height={414} width={414} />
@@ -29,8 +33,12 @@ export function Home() {
         <Input
           placeholder='What Pokémon are you looking for?'
           iconName='search'
+          autoCorrect={false}
+          onChangeText={setSearch}
+          value={search}
         />  
       </InputContainer>
     </Container>
+    </TouchableWithoutFeedback>
   )
 }
