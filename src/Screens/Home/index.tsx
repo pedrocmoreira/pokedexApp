@@ -29,7 +29,7 @@ export function Home() {
         <Input
           placeholder='What Pokémon are you looking for?'
           iconName='search'
-        />
+        />  
       </InputContainer>
     </Container>
   )

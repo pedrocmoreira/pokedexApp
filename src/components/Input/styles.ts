@@ -11,14 +11,14 @@ export const InputContainer = styled.View`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.backgroundColors.inputBackground};
+  background-color: ${({ theme }) => theme.colors.backgroundColorsComponents.inputDefault};
   font-size: ${RFValue(16)}px;
-  padding: 20px 25px;
+  padding: 15px 25px;
   border-radius: 10px;
   `;
 
 export const InputText = styled(TextInput)`
-color: ${({ theme }) => theme.colors.textColors.textGray};
+color: ${({ theme }) => theme.colors.textColors.textGrey};
 font-family: ${({ theme }) => theme.fonts.regular};
 
 `;
