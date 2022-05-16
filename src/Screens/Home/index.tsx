@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Keyboard, LogBox, TouchableWithoutFeedback } from 'react-native';
-import PokeballSvg from '../../assets/patterns/pokeball.svg';
+import PokeballSvg from '../../assets/patterns/pokeballBlack.svg';
 import { Input } from '../../components/Input';
 import { PokemonCard } from '../../components/PokemonCard';
 
